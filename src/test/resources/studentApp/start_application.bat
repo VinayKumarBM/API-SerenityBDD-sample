@@ -1,0 +1,1 @@
+java -jar studentApp.jar --server.port=8888 >> output.txt

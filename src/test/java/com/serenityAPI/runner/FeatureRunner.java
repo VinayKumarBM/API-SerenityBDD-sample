@@ -1,7 +1,11 @@
 package com.serenityAPI.runner;
 
-import org.junit.runner.RunWith;
+import java.io.IOException;
 
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.runner.RunWith;
+import com.serenityAPI.utils.StudentApplication;
 import cucumber.api.CucumberOptions;
 import cucumber.api.SnippetType;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
@@ -19,4 +23,15 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 		)
 public class FeatureRunner {
 
+	@BeforeClass
+	public static void init() throws IOException, InterruptedException {
+		StudentApplication application = new StudentApplication();
+		application.start();
+	}
+
+	@AfterClass
+	public static void teardown() throws IOException, InterruptedException {
+		StudentApplication application = new StudentApplication();
+		application.shutdown();
+	}
 }
