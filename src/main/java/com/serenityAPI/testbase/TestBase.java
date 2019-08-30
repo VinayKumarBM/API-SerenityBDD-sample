@@ -19,6 +19,6 @@ public class TestBase {
 	@AfterClass
 	public static void teardown() throws IOException, InterruptedException {
 		StudentApplication application = new StudentApplication();
-		application.shutdown();
+		//application.shutdown();
 	}
 }
