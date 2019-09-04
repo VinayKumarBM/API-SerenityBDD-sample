@@ -1,15 +1,18 @@
 package com.serenityAPI.datadriventests;
 
 import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import com.serenityAPI.steps.StudentAPISteps;
-import com.serenityAPI.testbase.TestBase;
+
 import io.restassured.response.Response;
 import net.serenitybdd.junit.runners.SerenityParameterizedRunner;
 import net.thucydides.core.annotations.Steps;
@@ -21,7 +24,7 @@ import net.thucydides.junit.annotations.UseTestDataFrom;
 @Concurrent (threads = "4x")
 @UseTestDataFrom ("testdata/StudentInfo.csv")
 @RunWith(SerenityParameterizedRunner.class)
-public class APISerenityDataDrivenTest extends TestBase{
+public class APISerenityDataDrivenTest {
 	private Logger log = LoggerFactory.getLogger(APISerenityDataDrivenTest.class);
 	@Steps
 	StudentAPISteps studentAPISteps;

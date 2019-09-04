@@ -1,18 +1,21 @@
 package com.serenityAPI.tests;
 
 import static org.junit.Assert.assertEquals;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import com.serenityAPI.steps.StudentAPISteps;
-import com.serenityAPI.testbase.TestBase;
 import com.serenityAPI.utils.RandomDataUtil;
+
 import io.restassured.response.Response;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.serenitybdd.rest.SerenityRest;
@@ -23,7 +26,7 @@ import net.thucydides.core.annotations.WithTags;
 
 @FixMethodOrder (MethodSorters.NAME_ASCENDING)
 @RunWith (SerenityRunner.class)
-public class APISerenityTests extends TestBase {
+public class APISerenityTests {
 	private final Logger log = LoggerFactory.getLogger(APISerenityTests.class);
 	RandomDataUtil dataUtil = new RandomDataUtil();
 	private String firstName = dataUtil.generateRandomData();
