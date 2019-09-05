@@ -22,7 +22,7 @@ public class StudentApplication {
 		deleteLogFile();
 
 		Runtime runtime = Runtime.getRuntime();
-		runtime.exec("cmd /c start start_application.bat", null, new File(applicationFolder));
+		runtime.exec("cmd /c start \"StudentApp\" start_application.bat", null, new File(applicationFolder));
 
 		boolean hasAppStarted = false;
 		Calendar calendar = Calendar.getInstance();
@@ -55,7 +55,9 @@ public class StudentApplication {
 
 	public void shutdown() throws IOException, InterruptedException {
 		log.info("Closing the Student Application");
-		Runtime.getRuntime().exec("taskkill /IM cmd.exe");
+		Runtime.getRuntime().exec("TASKKILL /FI \"WINDOWTITLE eq StudentApp - start_application.bat\"");
+	//	Runtime.getRuntime().exec("taskkill /IM cmd.exe");
 		Thread.sleep(5000);
 	}
-}
+}	
+
